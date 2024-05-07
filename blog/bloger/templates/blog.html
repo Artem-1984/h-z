@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/" class = 'active'>Главная</a> </li>
+        <li><a href="/admin" class = 'active'>Админ</a> </li>
+
+    </ul>
+    <h1>                                         BLOG</h1>
+    {% for post in posts %}
+    <h4><a href="{{post.id}}">{{ post.header }} </a></h4>
+        <p>{{ post.text }}</p>
+        <p>{{ post.date}}</p>
+
+
+    {% endfor %}
+
+
+
+
+
+</body>
+</html>

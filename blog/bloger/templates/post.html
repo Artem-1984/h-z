@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.header }}</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/" class = 'active'>Главная</a> </li>
+        <li><a href="/admin" class = 'active'>Админ</a> </li>
+
+    </ul>
+    <h1>BLOG</h1>
+        {{ post.header }}
+        {{ post.text }}
+        {{ post.date}}
+
+
+
+
+            <form method="post" action="{% url 'comment' post.id%}">
+                <h4>Добавить коммент</h4>
+                <p>Name:<br> <input name="first_name" /></p>
+                <p>text:<br> <input name="text" type="text"/></p>
+                <p>Date:<br> <input name="date" type="date"/></p>
+
+                <input type="submit" value="Send" />
+            </form>
+            <div>
+            <div>
+
+                    {% for com in post.blogers_set.all %}
+                       <li>
+                            {{ com.first_name }} <br>
+                            {{ com.text }}
+                           {{com.date}}
+                        </li>
+
+                    {%endfor%}
+
+
+        </div>
+        </div>
+
+
+
+
+</body>
+</html>
