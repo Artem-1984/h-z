@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m_6x)@9quth*hm7%c3-^jp8wvk4fs#erunemwcmr5ytsl^wd9l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bloger.apps.BlogerConfig'
+    'bloger.apps.BlogerConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [

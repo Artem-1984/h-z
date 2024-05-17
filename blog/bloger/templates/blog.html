@@ -5,23 +5,34 @@
     <title>Блог</title>
 </head>
 <body>
-    <ul>
-        <li><a href="/" class = 'active'>Главная</a> </li>
-        <li><a href="/admin" class = 'active'>Админ</a> </li>
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="" class = 'active'>Главная</a> </li>
+            <li><a href="/admin" class = 'active'>Админ</a> </li>
+            <li><a href="/cm/" class = 'active'>Добавить пост</a> </li>
+            <li><a href="users" class = 'active'>Войти</a> </li>
+            <li><a href="users/logout" class = 'active'>Выйти</a> </li>
 
-    </ul>
-    <h1>                                         BLOG</h1>
-    {% for post in posts %}
-    <h4><a href="{{post.id}}">{{ post.header }} </a></h4>
-        <p>{{ post.text }}</p>
-        <p>{{ post.date}}</p>
-
-
-    {% endfor %}
+        </ul>
 
 
 
 
+
+        <h1> BLOG</h1>
+        {% for post in posts %}
+        <h4><a href="{{post.id}}">{{ post.header }} </a></h4>
+            <p>{{ post.text }}</p>
+            <p>{{ post.date}}</p>
+
+
+        {% endfor %}
+
+        {{ form }}
+    {%else%}
+        <h1>У вас нет прав на добавление и просмотр постов</h1>
+        <li><a href="users" class = 'active'>Войти</a> </li>
+    {% endif%}
 
 </body>
 </html>

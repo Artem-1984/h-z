@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/" class = 'active'>Главная</a> </li>
+        <li><a href="/admin" class = 'active'>Админ</a> </li>
+
+    </ul>
+    <h1>Создание нового поста </h1>
+    <form method="post" action="{% url 'cm'%}">
+        <ul>Заголовок <input type="text" name="header" /></ul>
+        <ul>Текст <textarea name="text" id="" cols="30" rows="5"></textarea></ul>
+        <input type="submit" value="Отправить">
+     </form>
+
+</body>
+</html>
