@@ -9,4 +9,9 @@ class BlogerForm(forms.ModelForm):
 class Add(forms.ModelForm):
     class Meta:
         model = BlodPost
-        fields = ('header', 'text')
+        fields = ('header','first_name', 'text')
+
+class Replacement(forms.ModelForm):
+    class Meta:
+        model = BlodPost
+        fields = ('text',)

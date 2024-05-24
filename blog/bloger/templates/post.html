@@ -20,7 +20,7 @@
 
             <form method="post" action="{% url 'comment' post.id%}">
                 <h4>Добавить коммент</h4>
-                <p>Name:<br> <input name="first_name" /></p>
+                <p>Name:<br> <input name="first_name" value="{{ request.user.username }}" readonly/></p>
                 <p>text:<br> <input name="text" type="text"/></p>
                 <p>Date:<br> <input name="date" type="date"/></p>
 
@@ -31,9 +31,11 @@
 
                     {% for com in post.blogers_set.all %}
                        <li>
+
                             {{ com.first_name }} <br>
-                            {{ com.text }}
+                            {{ com.text }} <br>
                            {{com.date}}
+                           <a href="{% url 'red' com.pk%}">Редактировать </a>
                         </li>
 
                     {%endfor%}

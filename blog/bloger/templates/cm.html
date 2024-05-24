@@ -14,6 +14,7 @@
     <h1>Создание нового поста </h1>
     <form method="post" action="{% url 'cm'%}">
         <ul>Заголовок <input type="text" name="header" /></ul>
+        <ul>Имя <input type="text" name="first_name" value="{{ request.user.username }}" readonly /></ul>
         <ul>Текст <textarea name="text" id="" cols="30" rows="5"></textarea></ul>
         <input type="submit" value="Отправить">
      </form>

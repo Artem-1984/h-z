@@ -15,14 +15,18 @@
 
         </ul>
 
-
+        <form action="{% url 'a'%}" method = 'get'>
+            <button type="submit">Получение прав</button>
+        </form>
 
 
 
         <h1> BLOG</h1>
+
         {% for post in posts %}
         <h4><a href="{{post.id}}">{{ post.header }} </a></h4>
             <p>{{ post.text }}</p>
+            <p>{{ post.first_name}}</p>
             <p>{{ post.date}}</p>
 
 

@@ -7,7 +7,7 @@ class BlodPost(models.Model):
     header = models.CharField('Заголовок',max_length=30)
     text = models.TextField('Содержание',max_length=200)
     date = models.DateTimeField('Дата',auto_now_add=True)
-
+    first_name = models.CharField('Имя', max_length=30)
     def __str__(self):
         return self.header
     class Meta:
@@ -21,6 +21,7 @@ class Blogers(models.Model):
     text = models.TextField('Текст',max_length=200)
     date = models.DateTimeField('Дата')
     post = models.ForeignKey(BlodPost, verbose_name = 'Блог', on_delete=models.CASCADE)
+
     def __str__(self):
         return self.first_name
     class Meta:

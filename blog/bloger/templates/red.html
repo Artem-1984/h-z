@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Комментарий</h1>
+    {{ post.first_name }} <br>
+    {{ post.text }} <br>
+    {{post.date}}
+
+
+    <form method="post" action="rep">
+        <p> Изменить комментарий: <input type="text" name ='text'></p>
+        <input type="submit" name="">
+    </form>
+
+    <form method="post" action="del">
+        <p> Удалить комментарий: <input type="submit" name=""></p>
+
+    </form>
+</body>
+</html>
